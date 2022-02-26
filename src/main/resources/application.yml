@@ -1,0 +1,28 @@
+
+# spring.jpa.hibernate.ddl-auto=update
+# spring.datasource.url=jdbc:mysql://localhost:3306/okintory
+# spring.datasource.username=ok_user
+# spring.datasource.password=ok_password
+# spring.datasource.driver-class-name =com.mysql.cj.jdbc.Driver
+# spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+# spring.jpa.show-sql: true
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/okintory
+    username: ok_user
+    password: ok_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  flyway:
+    locations: classpath:db/migrations
+
+flyway:
+  user: 'ok_user'
+  password: 'ok_password'
+  schemas: 'okintory'
+  url: 'jdbc:mysql://localhost:3306/okintory'

@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.6.4'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+        id 'org.flywaydb.flyway' version '8.2.0'
 }
 
 group = 'com.okizone'
@@ -23,6 +24,8 @@ dependencies {
 	//implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
+        implementation 'org.flywaydb:flyway-core:8.2.0'
+
         implementation 'org.springframework.boot:spring-boot-starter'
         runtimeOnly 'mysql:mysql-connector-java'
 
@@ -34,6 +37,12 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 }
 
+flyway {
+  user= 'ok_user'
+  password= 'ok_password'
+  schemas= 'okintory'
+  url= 'jdbc:mysql://localhost:3306/okintory'
+}
 tasks.named('test') {
 	useJUnitPlatform()
 }
