@@ -11,6 +11,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+      physical_naming_stratergy: 'org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy'
     database-platform: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
   datasource:
@@ -21,8 +22,8 @@ spring:
   flyway:
     locations: classpath:db/migrations
 
-flyway:
-  user: 'ok_user'
-  password: 'ok_password'
-  schemas: 'okintory'
-  url: 'jdbc:mysql://localhost:3306/okintory'
+# flyway:
+#   user: 'ok_user'
+#   password: 'ok_password'
+#   schemas: 'okintory'
+#   url: 'jdbc:mysql://localhost:3306/okintory'
